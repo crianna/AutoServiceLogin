@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="18b3bddc3f9a491c902e6cf0dd6ae5f7" Name="Diagram1">
+        <EntityTypeShape EntityType="AutoServiceModel.AfiliereServiceProducator" PointX="3" PointY="3.875" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.An" PointX="3" PointY="1.375" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.MartoriBord" PointX="5.75" PointY="2.125" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.Model" PointX="3" PointY="6.625" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.ModRezolvare" PointX="8" PointY="2.25" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.Motorizare" PointX="3" PointY="9.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.Producator" PointX="0.75" PointY="4" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.Service" PointX="0.75" PointY="0.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.sysdiagram" PointX="7.75" PointY="5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.Vehicul" PointX="5.25" PointY="6.375" Width="1.5" IsExpanded="true" />
+        <AssociationConnector ManuallyRouted="false" Association="AutoServiceModel.FK_AfiliereServiceProducator_Producator" />
+        <AssociationConnector ManuallyRouted="false" Association="AutoServiceModel.FK_AfiliereServiceProducator_Service" />
+        <AssociationConnector ManuallyRouted="false" Association="AutoServiceModel.FK_Vehicul_An" />
+        <AssociationConnector ManuallyRouted="false" Association="AutoServiceModel.FK_ModRezolvare_MartoriBord" />
+        <AssociationConnector ManuallyRouted="false" Association="AutoServiceModel.FK_Model_Producator" />
+        <AssociationConnector ManuallyRouted="false" Association="AutoServiceModel.FK_Vehicul_Model" />
+        <AssociationConnector ManuallyRouted="false" Association="AutoServiceModel.FK_Vehicul_Motorizare" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

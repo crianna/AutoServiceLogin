@@ -1,0 +1,34 @@
+﻿@model AutoServiceLogin.Model
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Model</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nume)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nume)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producator.Nume)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producator.Nume)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ModelID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

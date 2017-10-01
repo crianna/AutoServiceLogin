@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<link type="text/css" rel="stylesheet" href="https://code.jquery.com/ui/jquery-ui-git.css" />
+
+<h2>Alege datele masinii tale:</h2>
+
+<div>
+    <div class="form-group">
+        @Html.Label("Nume Productor", new { @class = "control-label" })
+        @Html.TextBox("producator", "", new { @placeholder = "Selecteaza Producator", @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Model", new { @class = "control-label" })
+        @Html.TextBox("model", "", new { @placeholder = "Selecteaza Model", @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Motorizare", new { @class = "control-label" })
+        @Html.TextBox("motorizare", "", new { @placeholder = "Selecteaza Motorizare", @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Anul", new { @class = "control-label" })
+        @Html.TextBox("anul", "", new { @placeholder = "Selecteaza Anul", @class = "form-control" })
+    </div>
+    <button id="next" class="btn btn-primary">Urmatorul pas</button>
+</div>
+<div style="padding-bottom:19em;"></div>
+
+@section scripts
+{
+    <script>
+        wizzard = {
+            prodURL: '@Url.Action("GetProducatori", "Wizard")',
+            motorURL: '@Url.Action("GetMotorizare","Wizard")',
+            mapURL:'@Url.Action("Map","Wizard")',
+            anulURL:'@Url.Action("GetAn","Wizard")',
+            modelURL: '@Url.Action("GetModele", "Wizard")',
+            viewMartori: '@Url.Action("GetMartori", "Wizard")'
+        }
+    </script>
+    <script src="~/Scripts/wizard.js"></script>
+}

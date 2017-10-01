@@ -1,0 +1,34 @@
+﻿@model AutoServiceLogin.Motorizare
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Motorizare</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nume)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nume)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProducatorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProducatorID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MotorizareID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

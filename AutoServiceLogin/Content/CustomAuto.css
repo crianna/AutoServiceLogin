@@ -1,0 +1,13 @@
+﻿@media (min-width: 1200px) {
+
+    .container .body-container {
+        max-width: 2000px !important;
+    }
+}
+
+
+@media (min-width: 450px) {
+    .container  {
+        max-width:110em !important;
+    }
+}

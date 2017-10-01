@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AutoServiceLogin.ModRezolvare>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ModeRezolvare)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MartoriBord.Nume)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModeRezolvare)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MartoriBord.Nume)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RezolvareID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RezolvareID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RezolvareID })
+        </td>
+    </tr>
+}
+
+</table>

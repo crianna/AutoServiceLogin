@@ -1,0 +1,105 @@
+﻿@model IEnumerable<AutoServiceLogin.Service>
+@{
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>
+
+    </title>
+</head>
+<body>
+  
+
+    <script type="text/javascript">
+
+    function initMap() {
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (p) {
+                var LatLng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
+                var mapOptions = {
+                    center: LatLng,
+                    zoom: 15,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                var me_marker = new google.maps.Marker({
+                    position: LatLng,
+                    map: map,
+                    title: "Locatia ta :"
+                });
+                google.maps.event.addListener(me_marker, "click", function (e) {
+                    var infoWindow = new google.maps.InfoWindow();
+                    infoWindow.setContent(me_marker.title);
+                    infoWindow.open(map, me_marker);
+                });
+
+                jQuery.get('@Url.Action("GetMapMarkers","Wizard")', {
+                    p: parseInt(@ViewBag.p)
+                }, function (data) {
+
+                    for (i = 0; i < data.length; i++) {
+                        var item = data[i];
+                        var _latLng = new google.maps.LatLng(item.Longitudine, item.Latitudine);
+                        var marker = new google.maps.Marker({
+                            position: _latLng,
+                                map: map,
+                                label:item.Nume.trim()
+                            });
+                    
+
+                    var line = new google.maps.Polyline({
+                        path: [LatLng, _latLng ],
+                        strokeColor: "#FF0000",
+                        strokeOpacity: 1.0,
+                        strokeWeight: 4,
+                        map: map
+                        });
+
+                    }
+                });
+            });
+        } else {
+            alert('This browser does not like your map.');
+        }
+
+
+    }
+    </script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAy4soBwpXOAJ_PPx8z12N_FQuwM8hsjE&callback=initMap"
+        type="text/javascript"></script>
+
+
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
+
+     @*<script>
+        var line = new google.maps.Polyline({
+            path: [new google.maps.Marker({
+                position: LatLng,
+                map: map
+            }) ,
+            new google.maps.Marker({
+                position: latLng,
+                map: map,
+            })
+            ],
+            strokeColor: "#FF0000",
+            strokeOpacity: 1.0,
+            strokeWeight: 10,
+            map: map
+        });
+
+    </script>*@
+<div id="map" style="width: 80%; height: 500px; margin-left:10%; margin-top:3%">
+</div>
+
+
+</body>
+</html>

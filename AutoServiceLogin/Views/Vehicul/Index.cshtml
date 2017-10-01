@@ -1,0 +1,45 @@
+﻿@model IEnumerable<AutoServiceLogin.Vehicul>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.An1.AnID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model.Nume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Motorizare.Nume)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.An1.AnID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model.Nume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Motorizare.Nume)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.VehiculID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VehiculID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VehiculID })
+        </td>
+    </tr>
+}
+
+</table>

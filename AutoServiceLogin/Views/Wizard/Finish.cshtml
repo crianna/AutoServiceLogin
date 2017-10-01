@@ -1,0 +1,49 @@
+﻿@model IEnumerable<AutoServiceLogin.MartoriBord>
+@{
+    ViewBag.Title = "Finish";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Descriere Martori</h2>
+
+@foreach (var item in Model)
+{
+    <div>
+        <label>
+            <input type="checkbox" name="martorSelectat[]" value=item.MartorID style="display:none" />
+           <span>
+               <ul>
+                   <li style="color:teal">
+                       <span>Nume Martor</span><br/>
+                       @Html.DisplayFor(labelItem => item.Nume)
+                   </li>
+                   <span>Descriere Martor</span><br/>
+                   <li>
+                       @Html.DisplayFor(labelItem => item.Descriere)
+                   </li>
+                   <span style="color:teal">Mod de Rezolvare</span>
+                   <br />
+                   <li>
+                       @Html.DisplayFor(labelItem => item.ModRezolvare)
+                   </li>
+                 
+                  
+                   
+                   <ul>
+            </span>
+
+        </label>
+
+    </div>
+
+}
+
+
+
+@using (Html.BeginForm("Map", "Wizard"))
+{
+        <input type="hidden" name="p" value="@Html.AttributeEncode(ViewBag.p)" />
+        
+
+        <button type="submit" style="margin-top:8em;margin-left:30em;" class="btn btn-primary">Continua</button>
+}
